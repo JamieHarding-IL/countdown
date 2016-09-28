@@ -1,5 +1,4 @@
 function getTimeRemaining(endtime) {
-    console.log('getTimeRemaining');
     var t = Date.parse(endtime) - Date.parse(new Date());
     var seconds = Math.floor((t / 1000) % 60);
     var minutes = Math.floor((t / 1000 / 60) % 60);
@@ -15,7 +14,6 @@ function getTimeRemaining(endtime) {
 }
 
 function initializeClock(id, endtime) {
-    console.log('initializeClock');
     var clock = document.getElementById(id);
     var daysSpan = clock.querySelector('.days');
     var hoursSpan = clock.querySelector('.hours');
@@ -23,7 +21,6 @@ function initializeClock(id, endtime) {
     var secondsSpan = clock.querySelector('.seconds');
 
     function updateClock() {
-        console.log('updateClock');
         var t = getTimeRemaining(endtime);
 
         daysSpan.innerHTML = t.days;
@@ -39,6 +36,5 @@ function initializeClock(id, endtime) {
     updateClock();
     var timeinterval = setInterval(updateClock, 1000);
 }
-console.log('ready');
 var deadline = 'October 01 2016';
 initializeClock('GoofDown', deadline);
